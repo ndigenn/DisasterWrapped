@@ -1,0 +1,23 @@
+nav {
+	background-color: #720E2A;
+	overflow: hidden;
+	font-family: Roboto;
+	position: relative;
+	width: 100%;
+	top: 0;
+    border-radius: 8px;
+}
+
+nav a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #ddd;
+	color: black;
+}
