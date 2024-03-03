@@ -1,14 +1,101 @@
-body {
-	background-color: #D3D3D3;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
+
+header {
+  height: 200vh;
 }
-nav {
-    background-color: #720E2A;
-    overflow: hidden;
-    font-family: Roboto;
-    position: relative;
-    width: 100%;
-    top: 0;
-    border-radius: 8px;
+
+.container {
+  /* hide fixed overflow contents */
+  clip: rect(0, auto, auto, 0);
+
+  /* does not work if overflow = visible */
+  overflow: hidden;
+
+  /* only works with absolute positioning */
+  position: absolute;
+
+  /* Make sure containers are full-width and height */
+  height: 100vh;
+  left: 0;
+  width: 100%;
+
+
+  /* safari hack */
+  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
+}
+
+.container_solid {
+  background: white;
+
+  /* position this container at the top of its parent element */
+  top: 0;
+}
+
+.title_wrapper {
+  position: fixed;
+  display: block;
+  margin: auto;
+  width: 100%;
+  /* center the text wrapper vertically */
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.title_wrapper h1 {
+  text-align: center;
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+}
+
+.container_solid .title_wrapper h1 {
+  /* the text background */
+  background: url(https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?&q=85);
+  background-size: 100vw auto;
+  background-position: center;
+
+  /* clip the text is possible */
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* fallback text color */
+  color: black;
+}
+
+.container_image {
+  /* Grab a free image from unsplash */
+  background-image: url(https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+  background-size:100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* position the second container below the first container */
+  top: 100vh;
+}
+
+.container_image .title_wrapper h1 {
+  color: white;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2em;
+  margin: auto;
+  max-width: 800px;
+}
+
+section h2 {
+  font-family: 'Fraunces', serif;
+}
+
+section p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 footer {
@@ -23,57 +110,3 @@ footer {
 	margin-top: 40px;
 }
 
-nav a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.resources-link {
-	float: right;
-}
-
-
-h1 {
-    text-align: center;
-    font-size: 46px;
-    margin-top: 50px;
-    font-family: Open Sans;
-    margin-top: 55px;
-}
-
-p {
-	font-family: Open Sans;
-	font-size: 11pt;
-}
-
-hr {
-    border: 0;
-    height: 7px;
-    background-color: #333;
-    margin: 1px auto;
-    width: 40%;
-    border-radius: 8px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-	align-items: center;
-    margin-top: 50px;
-}
-
-
-.tableauPlaceholder{
-	align-items: center;
-	margin-top: 80px;
-}
